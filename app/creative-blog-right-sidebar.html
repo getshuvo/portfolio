@@ -1,0 +1,35 @@
+{% extends "partials/main.html" %}
+
+{% set title = "Blog | Lambda" %}
+{% set sidebarClasses = "" %}
+{% set activeMenu = "Blog" %}
+
+{% block content %}
+<article>
+    <section class="section">
+        <div class="background-media" data-0-top-bottom="background-position: 50% -80px" data-start="background-position: 50% 0px" style="background-image: url(assets/images/creative/blog.jpg); background-repeat:no-repeat; background-size:cover; background-attachment:fixed; background-position: 50% 0%;">
+        </div>
+
+        <div class="background-overlay" style="background-color: rgba(48,60,64,0.6);"></div>
+
+        <div class="container">
+            <div class="row">
+                <header class="blog-header col-md-12 text-light">
+                    <h1 class="text-left small-screen-center element-top-160 element-bottom-60 text-light normal" data-0-top-bottom="opacity:0" data-center="opacity:1" data-os-animation=
+                    "none" data-os-animation-delay="0s" data-start="opacity:1">My Blog</h1>
+                </header>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="row element-top-50 element-bottom-50">
+                <div class="col-md-9 blog-list-layout-normal">
+                    {% include "partials/posts.html" %}
+                </div>
+                {% include "partials/sidebar.html" %}
+            </div>
+        </div>
+    </section>
+</article>
+{% endblock %}

@@ -1,0 +1,75 @@
+<div class="menu navbar navbar-static-top header-logo-left-menu-right text-none oxy-mega-menu navbar-sticky" id="masthead">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" data-target=".main-navbar" data-toggle="collapse" type=
+            "button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <!-- <img src="assets/images/logo.png" alt="Kaylin Jordan"> -->
+                KAYLIN<span class="black">JORDAN</span>
+            </a>
+        </div>
+        <div class="nav-container">
+            <nav class="collapse navbar-collapse main-navbar logo-navbar navbar-right">
+                <div class="menu-container">
+                    <ul class="nav navbar-nav bold" id="menu-main">
+                        {% for item in [{title:"Home", href:"index.html"},
+                                        {title:"About", href:"creative-about-us.html"},
+                                        {title:"Process", href:"creative-services-alt.html"},
+                                        {title:"Work", href:"#", children:[{title:"3 columns", href:"creative-portfolio-3-columns.html"},
+                                                                                {title:"4 columns", href:"creative-portfolio-4-columns.html"},
+                                                                                {title:"Standard Item", href:"creative-standard-item.html"},
+                                                                                {title:"Gallery Item", href:"creative-gallery-item.html"},
+                                                                                {title:"Video Item", href:"creative-video-item.html"}
+                                        ]},
+                                        {title:"Contact", href:"creative-contact.html"}] %}
+                        <li class="menu-item {{ 'active' if activeMenu == item.title }} {{ 'dropdown' if item.href == '#'}} {{ 'menu-item-object-oxy_mega_menu' if 'megamenu' == item.type }}">
+                            <a {{ 'class="dropdown-toggle" data-toggle="dropdown"' if item.href == '#' }} href="/{{ item.href }}">{{ item.title }}</a>
+                            {% if item.children %}
+                            <ul class="dropdown-menu dropdown-menu-left {{ 'row' if 'megamenu' == item.type }}">
+                            {% for child in item.children %}
+                                {% if item.type != 'megamenu' %}
+                                <li class="menu-item">
+                                    <a href="/{{ child.href }}">{{ child.title }}</a>
+                                </li>
+                                {% else %}
+                                <li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown {{ child.size }}">
+                                    <strong>{{child.title}}</strong>
+                                    <ul class="dropdown-menu-left">
+                                    {% for megamenu in child.children %}
+                                         <li class="menu-item">
+                                            <a href="/{{ megamenu.href }}">{{ megamenu.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                    </ul>
+                                </li>
+                                {% endif %}
+                            {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="menu-sidebar">
+                    <div class="sidebar-widget widget_search" id="search-5">
+                        <form action="creative-index.html" method="get" name="searchform">
+                            <div class="input-group">
+                                <input class="form-control" name="s" placeholder="Search" type="text">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="submit" value="Search">                                        
+                                        <i class="fa fa-search"></i>                                        
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

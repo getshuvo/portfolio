@@ -1,0 +1,96 @@
+{% extends "partials/main.html" %}
+
+{% set title = "Contact | Lambda" %}
+{% set activeMenu = "Contact" %}
+
+{% block extrajs %}
+    <!-- load contact form js -->
+    {% include "partials/js/contact.html" %}
+    <!-- load map js -->
+    {% include "partials/js/map.html" %}
+{% endblock %}
+
+{% block footer %}
+    {% include "partials/footer.html" %}
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+{% endblock %}
+
+{% block content %}
+<article>
+    <section class="section">
+        <div class="background-overlay" style="background-color: rgba(48,60,64,1);"></div>
+        <div class="container-fullwidth">
+            <div class="row">
+                <div class="col-md-12 element-top-100 element-bottom-0">
+                    <div class="google-map" id="map" style="height:400px"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <h1 class="text-center element-top-80 element-bottom-20 os-animation normal"
+                    data-os-animation="fadeIn" data-os-animation-delay="0s">
+                        Get in touch
+                    </h1>
+                    <div class="divider-border divider-border-center element-top-20 element-bottom-20 os-animation"
+                    data-os-animation="fadeIn" data-os-animation-delay="0s">
+                        <div class="divider-border-inner"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <h2 class="text-center center element-top-20 element-bottom-40 os-animation light"
+                            data-os-animation="fadeIn" data-os-animation-delay="0.3s">
+                                Oxygenna is a creative design agency with a passion  for pixel perfect themes. We are  located on an isolated island and we mind our own business.
+                            </h2>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <form action="contact_mailer.php" class="contact-form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group form-icon-group">
+                                            <i class="fa fa-user"></i>
+                                            <input class="form-control" id="name" name="name" placeholder="Your name *" type="text" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group form-icon-group">
+                                            <i class="fa fa-envelope"></i>
+                                            <input class="form-control" id="email" name="email" placeholder="Your email *" type="email" required="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-icon-group">
+                                    <i class="fa fa-pencil"></i>
+                                    <textarea class="form-control" id="message" name="message" placeholder="Your message" rows="10" required=""></textarea>
+                                </div>
+
+                                <div class="text-center">
+                                    <input type="submit" value="Send email" class="btn btn-primary">
+                                </div>
+                                <div class="messages text-center"></div>
+                            </form>
+                            <div class="divider-wrapper">
+                                <div class="visible-xs element-height-80"></div>
+                                <div class="visible-sm element-height-80"></div>
+                                <div class="visible-md element-height-80"></div>
+                                <div class="visible-lg element-height-80"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</article>
+{% endblock %}

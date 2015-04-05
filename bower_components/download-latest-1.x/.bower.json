@@ -1,0 +1,13 @@
+{
+  "name": "download-latest-1.x",
+  "_cacheHeaders": {
+    "ETag": "\"49e420db1825c99e94d213412a316c27\"",
+    "Last-Modified": "Sat, 12 May 2012 21:23:27 GMT",
+    "Content-Length": "113382",
+    "Content-Type": "application/zip"
+  },
+  "_release": "e-tag:49e420db1",
+  "_source": "http://css3pie.com/download-latest-1.x",
+  "_target": "*",
+  "_originalSource": "http://css3pie.com/download-latest-1.x"
+}
